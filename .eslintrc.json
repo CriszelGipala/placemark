@@ -13,7 +13,7 @@
       "sourceType": "module"
     },
     "rules": {
-      "import/no-unresolved": ["error", { "ignore": ["uuid"] }],
+      "import/no-unresolved": "off",
       "import/no-extraneous-dependencies": "off",
       "import/extensions": "off",
       "import/prefer-default-export": "off",
