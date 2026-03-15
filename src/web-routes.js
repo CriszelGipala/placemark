@@ -1,8 +1,13 @@
+import path from "path";
+import { fileURLToPath } from "url";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { categoryController } from "./controllers/category-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { adminController } from "./controllers/admin-controller.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -21,6 +26,13 @@ export const webRoutes = [
   { method: "GET", path: "/category/{id}/deleteplacemark/{placemarkid}", config: categoryController.deletePlacemark },
 
   { method: "GET", path: "/about", config: aboutController.index },
+
+  {
+    method: "GET",
+    path: "/{param*}",
+    handler: { directory: { path: path.join(__dirname, "public"), redirectToSlash: true } },
+    options: { auth: false },
+  },
 
   { method: "GET", path: "/admin", config: adminController.index },
   { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },

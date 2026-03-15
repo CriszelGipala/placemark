@@ -1,6 +1,7 @@
 import Hapi from "@hapi/hapi";
 import Vision from "@hapi/vision";
 import Cookie from "@hapi/cookie";
+import Inert from "@hapi/inert";
 import Handlebars from "handlebars";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -19,6 +20,7 @@ async function init() {
     host: "localhost",
   });
 
+  await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
   server.validator(Joi);
