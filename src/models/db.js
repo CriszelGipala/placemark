@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import { userMemStore } from "./mem/user-mem-store.js";
 import { categoryMemStore } from "./mem/category-mem-store.js";
 import { placemarkMemStore } from "./mem/placemark-mem-store.js";
@@ -15,6 +16,7 @@ export const db = {
   placemarkStore: null,
 
   init(storeType) {
+    dotenv.config();
     switch (storeType) {
       case "json":
         this.userStore = userJsonStore;
