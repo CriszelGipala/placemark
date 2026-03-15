@@ -1,0 +1,9 @@
+{
+    "mochaExplorer.nodePath": null,
+    "mochaExplorer.cwd": ".",
+    "mochaExplorer.mochaPath": "node_modules/mocha",
+    "mochaExplorer.files": "test/**/*.js",
+    "mochaExplorer.ui": "tdd",
+    "mochaExplorer.exit": true,
+    "mochaExplorer.logpanel": true
+  }
