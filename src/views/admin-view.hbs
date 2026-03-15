@@ -1,0 +1,27 @@
+{{> menu active="admin"}}
+
+<section class="section">
+  <h1 class="title">User Administration</h1>
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <td>{{firstName}} {{lastName}}</td>
+          <td>{{email}}</td>
+          <td>
+            <a href="/admin/deleteuser/{{_id}}" class="button is-danger is-small">
+              <i class="fas fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>
