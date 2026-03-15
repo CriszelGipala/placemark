@@ -30,7 +30,7 @@ async function init() {
     relativeTo: __dirname,
     path: "./views",
     layoutPath: "./views/layouts",
-    partialsPath: "./views/partials",
+    partialsPath: "./views/layouts/partials",
     layout: true,
     isCached: false,
   });
